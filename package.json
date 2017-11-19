@@ -1,0 +1,19 @@
+{
+  "name": "level1-pakage",
+  "version": "0.0.1",
+  "description": "practice level 1 on hexlet  nodejs",
+  "main": "dist/brain-games.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Badasper/project-lvl1-s69.git"
+  },
+  "author": "Alexander Yakovlev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Badasper/project-lvl1-s69/issues"
+  },
+  "homepage": "https://github.com/Badasper/project-lvl1-s69#readme"
+}
