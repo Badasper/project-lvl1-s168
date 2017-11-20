@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Badasper/project-lvl1-s69.git"
+    "url": "https://github.com/Badasper/project-lvl1-s168.git"
   },
   "author": "Alexander Yakovlev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Badasper/project-lvl1-s69/issues"
+    "url": "https://github.com/Badasper/project-lvl1-s168/issues"
   },
-  "homepage": "https://github.com/Badasper/project-lvl1-s69#readme",
+  "homepage": "https://github.com/Badasper/project-lvl1-s168#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
