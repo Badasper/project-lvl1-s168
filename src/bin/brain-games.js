@@ -1,6 +1,8 @@
-#!/usr/bin/nodejs
-import { askNameOfMan } from "..";
+#!/usr/bin/env nodejs
 
-console.log("Welcome to the Brain Games!");
+import askName from '..';
 
-console.log(`Hello, ${askNameOfMan()}!`);
+console.log('Welcome to the Brain Games!');
+
+console.log(`Hello, ${askName()}!`);
+
