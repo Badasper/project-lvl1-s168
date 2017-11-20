@@ -2,7 +2,7 @@
   "name": "level1-pakage",
   "version": "0.0.1",
   "description": "practice level 1 on hexlet  nodejs",
-  "main": "dist/brain-games.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "test",
     "babel-node": "babel-node",
