@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/Badasper/project-lvl1-s168.svg?branch=master)](https://travis-ci.org/Badasper/project-lvl1-s168)
 # HEXLET level 1
 ## step 1
-prepare environment -- under consideration
+prepare environment -- pass 
 ## step 2
-add function askNameOfMan 
+add function askName -- pass
+## step 3
+add eslint, travis, CodeClimate
