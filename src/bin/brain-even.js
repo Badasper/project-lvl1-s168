@@ -1,3 +1,5 @@
+#!usr/bin/env nodejs
+
 import { askAny, getRandom } from '..';
 
 const correctAns = (num) => {
