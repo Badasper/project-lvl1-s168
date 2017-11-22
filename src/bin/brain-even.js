@@ -1,4 +1,5 @@
-#!usr/bin/env nodejs
+#!/usr/bin/env nodejs
+
 
 import { askAny, getRandom } from '..';
 
