@@ -6,4 +6,6 @@ prepare environment -- pass
 ## step 2
 add function askName -- pass
 ## step 3
-add eslint, travis, CodeClimate
+add eslint, travis, CodeClimate -- pass
+## step 4
+add game brain-even, create asinema
