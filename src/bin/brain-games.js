@@ -1,5 +1,5 @@
 #!/usr/bin/env nodejs
 
-import { askAny } from '..';
+import playBraingGame from '../games/brain-games-core';
 
-console.log(`Hello, ${askAny('May I ask your name? ')}!`);
+playBraingGame();

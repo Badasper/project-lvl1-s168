@@ -2,25 +2,32 @@ import readlineSync from 'readline-sync';
 
 export const askAny = question => readlineSync.question(`${question}`);
 
-const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
+export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
 
-const isEven = num => num % 2 === 0;
+export const isEven = num => num % 2 === 0;
 
-export const tryEvenAnswer = (name) => {
-  const randomNumber = getRandom(1, 100);
-  console.log(`Question: ${randomNumber}`);
-  const ans = askAny('Your answer:  ');
-  const correct = isEven(randomNumber) ? 'yes' : 'no';
-  if (ans === correct) {
-    console.log('Correct!');
-    return true;
+export const getRandomOperator = () => {
+  const operator = getRandom(1, 3);
+  switch (operator) {
+    case 1: return '+';
+    case 2: return '-';
+    case 3: return '*';
+    default:
+      return console.log(`error operator ${operator}`);
   }
-  console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correct}'.`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
 };
 
-const greeting = (nameOfGame, rule) => {
+export const getResultExpression = (num1, num2, operator) => {
+  switch (operator) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default:
+      return console.log(`error operator ${operator}`);
+  }
+};
+
+export const greeting = (nameOfGame, rule) => {
   console.log(`Welcome to ${nameOfGame}!`);
   console.log(rule);
   const name = askAny('May I have your name? ');

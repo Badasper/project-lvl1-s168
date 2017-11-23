@@ -8,4 +8,6 @@ add function askName -- pass
 ## step 3
 add eslint, travis, CodeClimate -- pass
 ## step 4
-add game brain-even, create asciinema
+add game brain-even, create asciinema -- pass
+## step 5
+add game brain-calc, redesign project
