@@ -1,12 +1,23 @@
-import { getRandom, isEven, playGame, cons } from '..';
+import { getRandom, playGame, cons } from '..';
 
-const getBrainEven = () => {
-  const question = getRandom(1, 100);
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
+const getBrainGcd = () => {
+  const gcd = (a, b) => {
+    const maxNum = a > b ? a : b;
+    const minNum = a > b ? b : a;
+
+    if (maxNum % minNum === 0) return minNum;
+    return gcd(minNum, maxNum % minNum);
+  };
+
+  const num1 = getRandom(1, 50);
+  const num2 = getRandom(1, 50);
+
+  const question = `${num1} ${num2}`;
+  const correctAnswer = gcd(num1, num2);
   const stopCount = 3;
-  const head = cons('Answer "yes" if number even otherwise answer "no".', stopCount);
-  const body = cons(question, correctAnswer);
+  const head = cons('Find the greatest common divisor of given numbers.', stopCount);
+  const body = cons(question, correctAnswer.toString());
   return cons(head, body);
 };
 
-export default () => playGame(getBrainEven);
+export default () => playGame(getBrainGcd);
