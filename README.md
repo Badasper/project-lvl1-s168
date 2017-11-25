@@ -10,8 +10,10 @@ add eslint, travis, CodeClimate -- pass
 ## step 4
 add game brain-even, create asciinema -- pass
 ## step 5
-add game brain-calc, redesign project
+add game brain-calc, redesign project -- pass
 ## step 6
 add game gcd
 ## step 7
 add game balance
+## step 8
+add game progression
