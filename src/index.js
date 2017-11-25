@@ -1,39 +1,24 @@
 import readlineSync from 'readline-sync';
-
-export const cons = (a, b) => (message) => {
-  switch (message) {
-    case 'car': return a;
-    case 'cdr': return b;
-    default: return '';
-  }
-};
-
-const car = pair => pair('car');
-const cdr = pair => pair('cdr');
+import { car, cdr } from 'hexlet-pairs';
 
 export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
 
 const consoleInput = question => readlineSync.question(`${question}`);
 
-const getRule = game => car(car(game));
-const getStopCount = game => cdr(car(game));
-const getQuestion = game => car(cdr(game));
-const getCorrectAnswer = game => cdr(cdr(game));
-
-export const playGame = (getGame) => {
-  let game = getGame();
+export const playGame = (stopCount, getGame) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${getRule(game)}`);
+  console.log(`${getGame('rule')}`);
   const name = consoleInput('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  const stopCount = getStopCount(game);
   let count = 0;
   while (count < stopCount) {
-    game = getGame();
-    console.log(`Question: ${getQuestion(game)}`);
+    const request = getGame('QA');
+    const question = car(request);
+    const correct = cdr(request);
+
+    console.log(`Question: ${question}`);
     const ans = consoleInput('Your answer: ');
-    const correct = getCorrectAnswer(game);
     if (ans === correct) {
       console.log('Correct!');
       count += 1;

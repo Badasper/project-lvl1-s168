@@ -1,8 +1,10 @@
-import { playGame, cons } from '..';
+import { cons } from 'hexlet-pairs';
+import { playGame } from '..';
 
-export default () => playGame(() => {
-  const stopCount = 0;
-  const head = cons('', stopCount);
-  const body = cons('', '');
-  return cons(head, body);
+export default () => playGame(0, (message) => {
+  switch (message) {
+    case 'rule': return '';
+    case 'QA': return cons('', '');
+    default: return 'error';
+  }
 });

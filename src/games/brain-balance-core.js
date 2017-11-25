@@ -1,6 +1,7 @@
-import { getRandom, playGame, cons } from '..';
+import { cons } from 'hexlet-pairs';
+import { getRandom, playGame } from '..';
 
-export default () => playGame(() => {
+export default () => playGame(3, (message) => {
   const getBalance = (strNumber) => {
     const strNum = strNumber.split('').sort().join('');
     const lastIndex = strNum.length - 1;
@@ -13,10 +14,13 @@ export default () => playGame(() => {
     return getBalance(`${firstNum}${strNum.substring(1, lastIndex)}${lastNum}`);
   };
 
-  const question = getRandom(100, 10000).toString();
-  const correctAnswer = getBalance(question);
-  const stopCount = 3;
-  const head = cons('Balance the given number.', stopCount);
-  const body = cons(question, correctAnswer);
-  return cons(head, body);
+  switch (message) {
+    case 'QA': {
+      const question = getRandom(100, 10000).toString();
+      const answer = getBalance(question);
+      return cons(question, answer);
+    }
+    case 'rule': return 'Balance the given number.';
+    default: return 'error';
+  }
 });

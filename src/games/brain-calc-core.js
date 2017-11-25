@@ -1,6 +1,7 @@
-import { getRandom, playGame, cons } from '..';
+import { cons } from 'hexlet-pairs';
+import { getRandom, playGame } from '..';
 
-export default () => playGame(() => {
+export default () => playGame(3, (message) => {
   const getOperator = (num) => {
     switch (num) {
       case 1: return '+';
@@ -18,14 +19,16 @@ export default () => playGame(() => {
     }
   };
 
-  const num1 = getRandom(1, 50);
-  const num2 = getRandom(1, 50);
-  const operator = getOperator(getRandom(1, 3));
-
-  const question = `${num1} ${operator} ${num2}`;
-  const correctAnswer = getAnswer(num1, num2, operator);
-  const stopCount = 3;
-  const head = cons('What is the result of the expression?', stopCount);
-  const body = cons(question, correctAnswer.toString());
-  return cons(head, body);
+  switch (message) {
+    case 'QA': {
+      const num1 = getRandom(1, 50);
+      const num2 = getRandom(1, 50);
+      const operator = getOperator(getRandom(1, 3));
+      const question = `${num1} ${operator} ${num2}`;
+      const answer = getAnswer(num1, num2, operator).toString();
+      return cons(question, answer);
+    }
+    case 'rule': return 'What is the result of the expression?';
+    default: return 'error';
+  }
 });
