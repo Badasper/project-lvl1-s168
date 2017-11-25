@@ -13,5 +13,6 @@ export default () => playGame(3, () => {
   const question = `${num1} ${num2}`;
   const answer = gcd(num1, num2).toString();
   const rule = 'Find the greatest common divisor of given numbers.';
+
   return message => getRequest(message, question, answer, rule);
 });

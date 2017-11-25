@@ -15,5 +15,6 @@ export default () => playGame(3, () => {
   const question = getRandom(100, 10000).toString();
   const answer = getBalance(question);
   const rule = 'Balance the given number.';
+
   return message => getRequest(message, question, answer, rule);
 });
