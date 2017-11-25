@@ -56,12 +56,13 @@ export const getProgression = (start, step, idx) => {
   return sequence;
 };
 
-export const playGame = (stopCount, rule, getGame) => {
+export const playGame = (rule, getGame) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${rule}`);
   const name = consoleInput('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
+  const stopCount = 3;
   let count = 0;
   while (count < stopCount) {
     const game = getGame();
