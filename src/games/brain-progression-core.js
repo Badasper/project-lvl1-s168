@@ -6,9 +6,9 @@ export default () => playGame(3, () => {
   const idx = getRandom(0, 9);
   let question = '';
   let count = 0;
+  let next;
   while (count < 10) {
-    let next = (step * count) + start;
-    if (idx === count) next = '..';
+    next = idx === count ? '..' : (step * count) + start;
     question = `${question} ${next} `;
     count += 1;
   }
