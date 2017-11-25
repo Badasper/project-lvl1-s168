@@ -13,3 +13,5 @@ add game brain-even, create asciinema -- pass
 add game brain-calc, redesign project
 ## step 6
 add game gcd
+## step 7
+add game balance

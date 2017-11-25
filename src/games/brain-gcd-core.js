@@ -1,10 +1,9 @@
 import { getRandom, playGame, cons } from '..';
 
-const getBrainGcd = () => {
+export default () => playGame(() => {
   const gcd = (a, b) => {
     const maxNum = a > b ? a : b;
     const minNum = a > b ? b : a;
-
     if (maxNum % minNum === 0) return minNum;
     return gcd(minNum, maxNum % minNum);
   };
@@ -18,6 +17,4 @@ const getBrainGcd = () => {
   const head = cons('Find the greatest common divisor of given numbers.', stopCount);
   const body = cons(question, correctAnswer.toString());
   return cons(head, body);
-};
-
-export default () => playGame(getBrainGcd);
+});

@@ -12,7 +12,7 @@ export const car = pair => pair('car');
 export const cdr = pair => pair('cdr');
 
 export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
-export const isEven = num => num % 2 === 0;
+
 const consoleInput = question => readlineSync.question(`${question}`);
 
 const getRule = game => car(car(game));
