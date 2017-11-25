@@ -1,17 +1,12 @@
-import { getRandom, isEven, askAny, playGame } from '..';
+import { getRandom, isEven, playGame, cons } from '..';
 
-export const tryEvenAnswer = (name) => {
-  const randomNumber = getRandom(1, 100);
-  console.log(`Question: ${randomNumber}`);
-  const ans = askAny('Your answer:  ');
-  const correct = isEven(randomNumber) ? 'yes' : 'no';
-  if (ans === correct) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correct}'.`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
+export const getBrainEven  = () => {
+  const question = getRandom(1, 100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  const stopCount = 3;
+  const head = cons('Answer "yes" if number even otherwise answer "no".', stopCount);
+  const body = cons(question, correctAnswer);
+  return cons(head, body);
 };
 
-export default () => playGame('Brain Even', 'Answer "yes" if number even otherwise answer "no".', 3, tryEvenAnswer);
+export default () => playGame(getBrainEven);

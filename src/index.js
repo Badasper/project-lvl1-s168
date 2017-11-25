@@ -1,50 +1,50 @@
 import readlineSync from 'readline-sync';
 
-export const askAny = question => readlineSync.question(`${question}`);
+export const cons = (a, b) => (message) => {
+  switch (message) {
+    case 'car': return a;
+    case 'cdr': return b;
+    default: return '';
+  }
+};
+
+export const car = pair => pair('car');
+export const cdr = pair => pair('cdr');
 
 export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
-
 export const isEven = num => num % 2 === 0;
+const consoleInput = question => readlineSync.question(`${question}`);
 
-export const getRandomOperator = () => {
-  const operator = getRandom(1, 3);
-  switch (operator) {
-    case 1: return '+';
-    case 2: return '-';
-    case 3: return '*';
-    default:
-      return console.log(`error operator ${operator}`);
-  }
-};
+const getRule = game => car(car(game));
+const getStopCount = game => cdr(car(game));
+const getQuestion = game => car(cdr(game));
+const getCorrectAnswer = game => cdr(cdr(game));
 
-export const getResultExpression = (num1, num2, operator) => {
-  switch (operator) {
-    case '+': return num1 + num2;
-    case '-': return num1 - num2;
-    case '*': return num1 * num2;
-    default:
-      return console.log(`error operator ${operator}`);
-  }
-};
-
-export const greeting = (nameOfGame, rule) => {
-  console.log(`Welcome to ${nameOfGame}!`);
-  console.log(rule);
-  const name = askAny('May I have your name? ');
+export const playGame = (getGame) => {
+  let game = getGame();
+  console.log('Welcome to the Brain Games!');
+  console.log(`${getRule(game)}`);
+  const name = consoleInput('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  return name;
-};
 
-export const playGame = (nameOfGame, rule, countStop, tryAnswer) => {
-  const name = greeting(nameOfGame, rule);
+  const stopCount = getStopCount(game);
   let count = 0;
-  while (count < countStop) {
-    if (tryAnswer(name)) {
+  while (count < stopCount) {
+    game = getGame();
+    console.log(`Question: ${getQuestion(game)}`);
+    const ans = consoleInput('Your answer: ');
+    const correct = getCorrectAnswer(game);
+    if (ans === correct) {
+      console.log('Correct!');
       count += 1;
     } else {
-      return 0;
+      console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correct}'.`);
+      console.log(`Let's try again, ${name}!`);
+      return 1;
     }
   }
-  console.log(`Congratulation, ${name}`);
-  return 1;
+  if (count > 0) {
+    console.log(`Congratulations, ${name}!`);
+  }
+  return 0;
 };

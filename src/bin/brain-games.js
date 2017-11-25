@@ -1,5 +1,5 @@
 #!/usr/bin/env nodejs
 
-import playBraingGame from '../games/brain-games-core';
+import playGame from '../games/brain-games-core';
 
-playBraingGame();
+playGame();

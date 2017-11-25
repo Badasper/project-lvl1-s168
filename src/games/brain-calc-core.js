@@ -1,20 +1,35 @@
-import { askAny, getRandom, getRandomOperator, getResultExpression, playGame } from '..';
+import { getRandom, playGame, cons } from '..';
 
-const tryCalcAnswer = (name) => {
+const getBrainCalc = () => {
   const num1 = getRandom(1, 50);
   const num2 = getRandom(1, 50);
-  const operator = getRandomOperator();
-
-  console.log(`Question: ${num1} ${operator} ${num2}`);
-  const ans = askAny('Your answer:  ');
-  const correct = getResultExpression(num1, num2, operator);
-  if (Number(ans) === correct) {
-    console.log('Correct!');
-    return true;
+  let operator;
+  switch (getRandom(1, 3)) {
+    case 1: operator = '+';
+      break;
+    case 2: operator = '-';
+      break;
+    case 3: operator = '*';
+      break;
+    default: operator = 'error';
   }
-  console.log(`'${ans}' is wrong answer ;(. Correct answer was '${correct}'.`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
+
+  const question = `${num1} ${operator} ${num2}`;
+  let correctAnswer;
+  switch (operator) {
+    case '+': correctAnswer = num1 + num2;
+      break;
+    case '-': correctAnswer = num1 - num2;
+      break;
+    case '*': correctAnswer = num1 * num2;
+      break;
+    default: correctAnswer = 'error';
+  }
+
+  const stopCount = 3;
+  const head = cons('What is the result of the expression?', stopCount);
+  const body = cons(question, correctAnswer.toString());
+  return cons(head, body);
 };
 
-export default () => playGame('Brain Calc', 'What is the result of the expression?', 3, tryCalcAnswer);
+export default () => playGame(getBrainCalc);
