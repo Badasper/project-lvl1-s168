@@ -1,4 +1,4 @@
-import { getRandom, playGame } from '..';
+import { getRandom, playGame, getRequest } from '..';
 
 export default () => playGame(3, () => {
   const gcd = (a, b) => {
@@ -13,12 +13,5 @@ export default () => playGame(3, () => {
   const question = `${num1} ${num2}`;
   const answer = gcd(num1, num2).toString();
   const rule = 'Find the greatest common divisor of given numbers.';
-  return (message) => {
-    switch (message) {
-      case 'question': return question;
-      case 'answer': return answer;
-      case 'rule': return rule;
-      default: return 'error';
-    }
-  };
+  return message => getRequest(message, question, answer, rule);
 });

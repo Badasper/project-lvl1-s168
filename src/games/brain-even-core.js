@@ -1,4 +1,4 @@
-import { getRandom, playGame } from '..';
+import { getRandom, playGame, getRequest } from '..';
 
 export default () => playGame(3, () => {
   const isEven = num => num % 2 === 0;
@@ -6,12 +6,5 @@ export default () => playGame(3, () => {
   const answer = isEven(question) ? 'yes' : 'no';
   const rule = 'Answer "yes" if number even otherwise answer "no".';
 
-  return (message) => {
-    switch (message) {
-      case 'question': return question;
-      case 'answer': return answer;
-      case 'rule': return rule;
-      default: return 'error';
-    }
-  };
+  return message => getRequest(message, question, answer, rule);
 });

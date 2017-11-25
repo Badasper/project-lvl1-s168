@@ -1,4 +1,4 @@
-import { getRandom, playGame } from '..';
+import { getRandom, playGame, getRequest } from '..';
 
 export default () => playGame(3, () => {
   const getOperator = (num) => {
@@ -25,12 +25,5 @@ export default () => playGame(3, () => {
   const answer = getAnswer(num1, num2, operator).toString();
   const rule = 'What is the result of the expression?';
 
-  return (message) => {
-    switch (message) {
-      case 'question': return question;
-      case 'answer': return answer;
-      case 'rule': return rule;
-      default: return 'error';
-    }
-  };
+  return message => getRequest(message, question, answer, rule);
 });

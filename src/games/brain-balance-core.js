@@ -1,4 +1,4 @@
-import { getRandom, playGame } from '..';
+import { getRandom, playGame, getRequest } from '..';
 
 export default () => playGame(3, () => {
   const getBalance = (strNumber) => {
@@ -15,12 +15,5 @@ export default () => playGame(3, () => {
   const question = getRandom(100, 10000).toString();
   const answer = getBalance(question);
   const rule = 'Balance the given number.';
-  return (message) => {
-    switch (message) {
-      case 'question': return question;
-      case 'answer': return answer;
-      case 'rule': return rule;
-      default: return 'error';
-    }
-  };
+  return message => getRequest(message, question, answer, rule);
 });

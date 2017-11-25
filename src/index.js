@@ -4,6 +4,15 @@ export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.rando
 
 const consoleInput = question => readlineSync.question(`${question}`);
 
+export const getRequest = (message, question, answer, rule) => {
+  switch (message) {
+    case 'question': return question;
+    case 'answer': return answer;
+    case 'rule': return rule;
+    default: return 'error';
+  }
+};
+
 export const playGame = (stopCount, getGame) => {
   console.log('Welcome to the Brain Games!');
   const rule = getGame()('rule');
