@@ -1,6 +1,6 @@
 import { playGame, cons } from '..';
 
-export const getBrainGame = () => {
+const getBrainGame = () => {
   const stopCount = 0;
   const head = cons('', stopCount);
   const body = cons('', '');
