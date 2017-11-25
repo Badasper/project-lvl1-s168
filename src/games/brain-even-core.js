@@ -1,6 +1,6 @@
 import { getRandom, isEven, playGame, cons } from '..';
 
-export const getBrainEven  = () => {
+export const getBrainEven = () => {
   const question = getRandom(1, 100);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   const stopCount = 3;
