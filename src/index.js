@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
 
 export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
 
@@ -7,15 +6,16 @@ const consoleInput = question => readlineSync.question(`${question}`);
 
 export const playGame = (stopCount, getGame) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${getGame('rule')}`);
+  const rule = getGame()('rule');
+  console.log(`${rule}`);
   const name = consoleInput('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
   let count = 0;
   while (count < stopCount) {
-    const request = getGame('QA');
-    const question = car(request);
-    const correct = cdr(request);
+    const request = getGame();
+    const question = request('question');
+    const correct = request('answer');
 
     console.log(`Question: ${question}`);
     const ans = consoleInput('Your answer: ');
