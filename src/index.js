@@ -8,8 +8,8 @@ export const cons = (a, b) => (message) => {
   }
 };
 
-export const car = pair => pair('car');
-export const cdr = pair => pair('cdr');
+const car = pair => pair('car');
+const cdr = pair => pair('cdr');
 
 export const getRandom = (min, max) => Math.floor(((max - min) + 1) * Math.random()) + min;
 
