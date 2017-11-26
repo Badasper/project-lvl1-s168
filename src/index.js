@@ -31,7 +31,7 @@ export const playGame = (rule, getGame) => {
     const question = car(game);
     const correctAnswer = cdr(game);
 
-    console.log(`Question: ${question}`);
+    console.log(`${question}`);
     const answer = consoleInput('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');

@@ -8,6 +8,6 @@ export default () => {
     const num2 = getRandom(1, 50);
     const question = `${num1} ${num2}`;
     const answer = gcd(num1, num2).toString();
-    return cons(question, answer);
+    return cons(`Qustion: ${question}`, answer);
   });
 };

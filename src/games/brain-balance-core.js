@@ -6,7 +6,7 @@ export default () => {
   return playGame(rule, () => {
     const question = getRandom(100, 10000);
     const answer = getBalanceNumber(question).toString();
-    return cons(question, answer);
+    return cons(`Qustion: ${question}`, answer);
   });
 };
 

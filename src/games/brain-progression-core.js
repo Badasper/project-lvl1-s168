@@ -19,6 +19,6 @@ export default () => {
       count += 1;
     }
     const answer = getItemOfProgression(start, step, idx).toString();
-    return cons(question, answer);
+    return cons(`Qustion: ${question}`, answer);
   });
 };

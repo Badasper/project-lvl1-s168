@@ -6,6 +6,6 @@ export default () => {
   return playGame(rule, () => {
     const question = getRandom(1, 100);
     const answer = question % 2 === 0 ? 'yes' : 'no';
-    return cons(question, answer);
+    return cons(`Qustion: ${question}`, answer);
   });
 };

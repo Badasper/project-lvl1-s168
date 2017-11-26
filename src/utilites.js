@@ -23,3 +23,12 @@ export const gcd = (num1, num2) => {
 };
 
 export const getItemOfProgression = (start, step, idx) => (step * idx) + start;
+
+export const isPrime = (num) => {
+  const iter = (acc, number) => {
+    if (number % acc === 0 || number <= 0) return false;
+    if (acc > number / 2) return true;
+    return iter(acc + 1, number);
+  };
+  return iter(2, num);
+};

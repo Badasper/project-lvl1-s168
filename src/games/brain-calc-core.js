@@ -27,6 +27,6 @@ export default () => {
     const operator = getOperator(getRandom(1, 3));
     const question = `${num1} ${operator} ${num2}`;
     const answer = calcExpression(num1, num2, operator).toString();
-    return cons(question, answer);
+    return cons(`Qustion: ${question}`, answer);
   });
 };
