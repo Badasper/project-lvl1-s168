@@ -1,4 +1,23 @@
-import { getRandom, playGame, getOperator, calcExpression, cons } from '..';
+import { playGame, cons } from '..';
+import { getRandom } from '../utilites';
+
+const getOperator = (num) => {
+  switch (num) {
+    case 1: return '+';
+    case 2: return '-';
+    case 3: return '*';
+    default: return 'error';
+  }
+};
+
+const calcExpression = (num1, num2, operator) => {
+  switch (operator) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: return 'error';
+  }
+};
 
 export default () => {
   const rule = 'What is the result of the expression?';

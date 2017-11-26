@@ -1,4 +1,5 @@
-import { getRandom, playGame, getBalanceNumber, cons } from '..';
+import { playGame, cons } from '..';
+import { getRandom, getBalanceNumber } from '../utilites';
 
 export default () => {
   const rule = 'Balance the given number.';

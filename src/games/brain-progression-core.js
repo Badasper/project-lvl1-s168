@@ -1,4 +1,5 @@
-import { getRandom, playGame, getProgression, cons } from '..';
+import { playGame, cons } from '..';
+import { getRandom, getItemOfProgression } from '../utilites';
 
 export default () => {
   const rule = 'What number is missing in this progression?';
@@ -6,8 +7,18 @@ export default () => {
     const step = getRandom(1, 50);
     const start = getRandom(1, 50);
     const idx = getRandom(0, 9);
-    const question = getProgression(start, step, idx);
-    const answer = (start + (step * idx)).toString();
+    const lenProgression = 10;
+    let question = '';
+    let count = 0;
+    while (count < lenProgression) {
+      if (count === idx) {
+        question = `${question}.. `;
+      } else {
+        question = `${question}${getItemOfProgression(start, step, count)} `;
+      }
+      count += 1;
+    }
+    const answer = getItemOfProgression(start, step, idx).toString();
     return cons(question, answer);
   });
 };

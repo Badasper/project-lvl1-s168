@@ -1,4 +1,5 @@
-import { getRandom, playGame, gcd, cons } from '..';
+import { playGame, cons } from '..';
+import { getRandom, gcd } from '../utilites';
 
 export default () => {
   const rule = 'Find the greatest common divisor of given numbers.';

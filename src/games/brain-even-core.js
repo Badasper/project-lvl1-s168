@@ -1,4 +1,5 @@
-import { getRandom, playGame, cons } from '..';
+import { playGame, cons } from '..';
+import { getRandom } from '../utilites';
 
 export default () => {
   const rule = 'Answer "yes" if number even otherwise answer "no".';
