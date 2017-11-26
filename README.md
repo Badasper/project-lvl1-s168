@@ -12,8 +12,10 @@ add game brain-even, create asciinema -- pass
 ## step 5
 add game brain-calc, redesign project -- pass
 ## step 6
-add game gcd
+add game gcd -- pass
 ## step 7
-add game balance
+add game balance -- pass
 ## step 8
-add game progression
+add game progression -- pass
+## step 9
+add geme prime

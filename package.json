@@ -1,6 +1,6 @@
 {
   "name": "level1-pakage",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "practice level 1 on hexlet  nodejs",
   "main": "dist/index.js",
   "scripts": {
