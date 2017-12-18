@@ -18,4 +18,4 @@ add game balance -- pass
 ## step 8
 add game progression -- pass
 ## step 9
-add geme prime
+add geme prime -- pass
