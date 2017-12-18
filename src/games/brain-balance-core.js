@@ -1,4 +1,5 @@
-import { playGame, cons } from '..';
+import { cons } from 'hexlet-pairs';
+import playGame from '..';
 import { getRandom, getBalanceNumber } from '../utilites';
 
 export default () => {

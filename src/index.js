@@ -1,7 +1,5 @@
-import { car, cdr, cons } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
-
-export { cons };
 
 const consoleInput = question => readlineSync.question(`${question}`);
 
@@ -12,16 +10,15 @@ const sayWelcome = (rule) => {
   console.log(`Hello, ${name}!`);
   return name;
 };
-const sayYouLoss = (name, answer, correctAnswer) => {
+const sayYouLose = (name, answer, correctAnswer) => {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${name}!`);
 };
-
 const sayYouWin = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const playGame = (rule, getGame) => {
+export default (rule, getGame) => {
   const name = sayWelcome(rule);
 
   const stopCount = 3;
@@ -37,7 +34,7 @@ export const playGame = (rule, getGame) => {
       console.log('Correct!');
       count += 1;
     } else {
-      sayYouLoss(name, answer, correctAnswer);
+      sayYouLose(name, answer, correctAnswer);
       return 1;
     }
   }
