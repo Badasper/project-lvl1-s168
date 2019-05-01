@@ -1,7 +1,7 @@
 {
-  "name": "level1-pakage",
-  "version": "1.0.1",
-  "description": "practice level 1 on hexlet  nodejs",
+  "name": "hexlet-level1-brain-game",
+  "version": "1.0.0",
+  "description": "CLI Brain game. Practice level 1 on hexlet nodejs",
   "main": "dist/index.js",
   "scripts": {
     "eslint": "eslint",
@@ -41,7 +41,6 @@
     "eslint-plugin-import": "^2.8.0"
   },
   "dependencies": {
-    "hexlet-pairs": "^1.0.5",
     "readline-sync": "^1.4.7"
   }
 }

@@ -1,4 +1,3 @@
-import { cons } from 'hexlet-pairs';
 import playGame from '..';
 import { getRandom } from '../utilites';
 
@@ -27,7 +26,7 @@ export default () => {
     const num2 = getRandom(1, 50);
     const operator = getOperator(getRandom(1, 3));
     const question = `${num1} ${operator} ${num2}`;
-    const answer = calcExpression(num1, num2, operator).toString();
-    return cons(`Qustion: ${question}`, answer);
+    const correctAnswer = calcExpression(num1, num2, operator).toString();
+    return { question: `Qustion: ${question}`, correctAnswer };
   });
 };

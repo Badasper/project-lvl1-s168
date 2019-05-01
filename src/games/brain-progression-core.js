@@ -1,4 +1,3 @@
-import { cons } from 'hexlet-pairs';
 import playGame from '..';
 import { getRandom, getItemOfProgression } from '../utilites';
 
@@ -24,7 +23,7 @@ export default () => {
     const idx = getRandom(0, 9);
     const lenProgression = 10;
     const question = getProgression(lenProgression, start, step, idx);
-    const answer = getItemOfProgression(start, step, idx).toString();
-    return cons(`Qustion: ${question}`, answer);
+    const correctAnswer = getItemOfProgression(start, step, idx).toString();
+    return { question: `Qustion: ${question}`, correctAnswer };
   });
 };

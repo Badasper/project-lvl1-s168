@@ -1,4 +1,3 @@
-import { cons } from 'hexlet-pairs';
 import playGame from '..';
 import { getRandom, gcd } from '../utilites';
 
@@ -8,7 +7,7 @@ export default () => {
     const num1 = getRandom(1, 50);
     const num2 = getRandom(1, 50);
     const question = `${num1} ${num2}`;
-    const answer = gcd(num1, num2).toString();
-    return cons(`Qustion: ${question}`, answer);
+    const correctAnswer = gcd(num1, num2).toString();
+    return { question: `Qustion: ${question}`, correctAnswer };
   });
 };
